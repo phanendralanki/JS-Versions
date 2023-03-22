@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="content">
+        <h1>Let's see what is Event Object</h1>
+
+        <div class="button_container">
+            <div class="button_su">
+                <span class="su_button_circle">
+                </span>
+                <a href="#" class="button_su_inner" id="fourthway">
+                    <span class="button_text_container">
+                        Event listeners
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <script>
+
+            const fourthway = document.getElementById('fourtWay');
+
+            const checkEvent =() => {
+                alert('welcome to the Events');
+                console.log(event);
+                console.log(event.target);
+                console.log(event.type);
+            }
+
+            fourthway.addEventListener('click',checkEvent);
+
+            // To get all the information about the event, we can use the Event Object
+        </script>
+    </div>
+</body>
+</html>

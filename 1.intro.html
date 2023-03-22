@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <script>
+
+            // now its time for modern javascript
+
+            // Features of ECMAScript 2015 also known as ES6
+
+            // 1. LET VS CONST VS VAR
+
+            // var myName ="phanendra lanki";
+            // document.write(myName);
+            // myName = "phani lanki";
+            // document.write(myName);
+
+
+            // let
+            // let myName ="phanendra lanki";
+            // document.write(myName);
+            // myName = "phani lanki";
+            // document.write(myName);
+
+            // const is like a constant we can't change the word
+
+            // const myName = "phanendra lanki";
+            // document.write(myName);
+            // myName = "phani lanki";
+            // document.write(myName);
+
+
+        // var -> Function scope
+        // let and const -> block scope
+
+        // var -> function scope
+        // function biodata(){
+        //     var myFirstName ="phanendra";
+        //     document.write(myFirstName);
+
+        //     if(true){
+        //         var myLastName ="lanki";
+        //         document.write('inner '+myLastName);
+        //         document.write('inner '+myFirstName);
+        //     }
+        //     document.write('innerOuter '+myLastName);
+        // }
+
+        // biodata();
+
+
+
+        // let and const -> block scope
+        // open console to understand the error
+        // function biodata(){
+        //     let myFirstName ="phanendra";
+        //     document.write(myFirstName);
+
+        //     if(true){
+        //         let myLastName ="lanki";
+        //         document.write('inner '+myLastName);
+        //         document.write('inner '+myFirstName);
+        //     }
+        //     document.write('innerOuter '+myLastName);
+        // }
+
+        // biodata();
+
+
+        // *****2. Template literals (Template strings) *****
+        // Javascript program to print table for given number (8)?
+
+        //output : 8 * 1 = 8
+                // 8 * 2 = 16(8*2)
+                // -> 8 * 10 = 80
+
+        // for(let num =1 ; num<=10; num++){
+        //     let tableOf = 12;
+        //     // document.write(tableOf +"*"+num + "="+tableOf *num+"<br/>");  //result through string concatenation
+        //     document.write(`${tableOf} * ${num} = ${tableOf * num} <br/>`);  //template literals
+        // }
+
+
+        // *****3.Default parameters
+        // Default function parameters allow named parameters to be initialized 
+        // with default values if no value or undefined is passed
+
+        // function mult(a,b){  //a,b are parameters
+            // function mult(a,b=5){  //b=5 is a default value
+            // return a*b;
+        // }
+        // document.write(mult(5,2));
+        // if we only pass one argument in future what it would be?
+        // document.write(mult(5));         //NaN 
+        // document.write(mult(5));  //After taking default value
+
+
+        // ***** 6. Fat Arrow Function *****
+
+        // normal way of writing function
+        
+        // document.write(sum());   //we can write the output statement at the beggining also
+        // function sum(){
+        //     let a = 5,b=6;
+        //     let sum =a+b;
+        //     return `the sum of the two number is ${sum}`;
+        // }
+        // document.write(sum());
+
+
+
+        // how to convert above program into Fat Arrow Function
+
+        // document.write(sum());   //we can't get the ouput because we can't write the output statement before initializing
+        // const sum = () => {         //sum is a function name and => is the arrow function
+        //     let a = 5,b=6;
+        //     let sum =a+b;
+        //     return `the sum of the two number is ${sum}`;
+        // }
+        // document.write(sum());  
+        //we have to give the output statement after the initialization of function in Arrow function
+// we can't call the function before defining the function.first define the function then call it.
+// This is the primary rule in Arrow function
+
+// one more example on arrow function
+
+const sum = () => `The sum of the two number is ${(a=5)+(b=6)}`;
+document.write(sum());
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

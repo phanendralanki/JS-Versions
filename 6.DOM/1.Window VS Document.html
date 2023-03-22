@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+    <script>
+        // what we will Do
+        // 1.window vs Document
+        // 2.DOM VS BOM
+        // 3.DOM Navigation
+        // 4.Searching and getting Elements Reference
+
+        // 1. Window(BOM) vs Document in Javascript
+
+        // The DOM is the Document Object Model, which deals with the document, the HTML elements themselves,
+        // e.g. document and all traversal you would do in it,events, etc.
+
+        // For Ex:
+        // Change the background color to red
+        // document.body.style.background = "red";
+
+        // The BOM is the Browser Object Model , which deals with browser components aside from
+        // the document,like history,location,navigator and screen (as well as some others but
+        // that vary by browser). OR
+        // In simple meaning all the window operations which comes under BOM  are performed using BOM, if html
+        // operations then use DOM.
+
+
+        // lets see more practical on History object
+
+        // Functions alert/confirm/prompt are also a part of BOM:
+        // they are directly not related to the document, but represent pure browser methods of communicating with the user.
+
+        // alert(location.href);    //shows current URL
+        // if(confirm("want to Visit ThapaTechnical?")){
+        //     location.href = "https://www.youtube.com/thapatechnical"; // redirect the browser to another URL
+        // }
+
+
+
+        /*Navigation through DOM*/   //--> Try Dom navigation.html
+
+        // 1: document.documentElement
+        // returns the Element that is the root element of the document.
+        //2: document.head
+        //3: document.body
+        //4: document.body.childNodes (include tab, enter and whitespace) 
+        // list of the direct children only
+        //5: document.children(without text nodes, only regular elements)
+        //6: document.childNodes.length
+        
+        
+
+        // practice Time
+
+    </script>
+</body>
+</html>

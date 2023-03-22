@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATE AND TIME OBJECT IN JAVASCRIPT</title>
+</head>
+<body>
+    <script>
+        // What we will see
+        // 1.Date Methods (get and set)
+        // 2.Time Methods (get and set)
+
+        /****** Date and Time in Javascript ******/
+
+        // JavaScript Date objects represent a single moment in time in a platform- independent format.
+        // Date objects contain a Number that represents milliseconds since 1 January 1970 UTC.
+
+        // Creating Date Objects 
+        // There are 4 ways to create a new date object:
+
+        // new Date()
+        // new Date(year, month, day, hours, minutes, seconds, milliseconds)
+        // // it takes 7 arguments
+        // new Date(milliseconds)
+        // // we cannot avoid month section
+        // new Date(date string)
+
+
+//--> START
+        // new Date()
+        // Date objects are created with the new Date() constructor.
+
+        // let currDate = new Date();
+        // document.write(currDate);          //Thu Jul 21 2022 23:57:54 GMT+0530 (India Standard Time)
+
+
+        // Another method to get the date and time 
+        // let currDate = new Date();
+        // document.write(currDate);   
+
+        // document.write(new Date());                  //Fri Jul 22 2022 00:00:28 GMT+0530 (India Standard Time)
+        // document.write(new Date().toLocaleString());  //7/22/2022, 12:00:06 AM
+        // document.write(new Date().toString());           //Fri Jul 22 2022 00:01:37 GMT+0530 (India Standard Time)
+
+
+        // Date.now()
+        //Returns the numeric value corresponding to the current time - the number of milliseconds elapsed
+        // since January 1,1970 00:00:00 UTC
+
+        // document.write(Date.now());       //1658428909402
+
+        
+        
+        // new Date(year,month, ...)
+        // 7 numbers specify year,month,day,hour,minute,second,and millisecond(in that order)
+        // Note: Javascript counts months from 0 to 11.
+
+        // January is 0. December is 11.
+
+        // var d = new Date(2022,6,22);
+        // document.write(d.toLocaleString());       //7/22/2022, 12:00:00 AM
+
+        /*new Date(dateString) */
+        //new Date(dateString) creates a new date object from a date string
+
+        // var d = new Date("october 13,2014 11:13:00");
+        // document.write(d);                                   //Mon Oct 13 2014 11:13:00 GMT+0530 (India Standard Time)
+
+
+        /* new Date(milliseconds)*/
+        // new Date(milliseconds) Creates a new date object as zero time plus milliseconds
+
+        // var d = new Date(0);
+        // var d = new Date(1609574531435);            //1/2/2021, 1:32:11 PM
+        // var d = new Date(86400000*2);                  1/3/1970, 5:30:00 AM
+        // document.write(d.toLocaleString());       
+
+
+        // Dates Method
+
+        // const curDate = new Date();
+
+        //  // how to get the indivisual date
+
+        // document.write(curDate.toLocaleString()+"<br/>");   // 7/22/2022, 12:33:40 AM
+        // document.write(curDate.getFullYear()+"<br/>");      //2022
+        // document.write(curDate.getMonth()+"<br/>");        //6  // 0-11 jan to dec
+        // document.write(curDate.getDate()+"<br/>");          //22
+        // document.write(curDate.getDay());                   //5
+    
+        
+        // // how to set the indivisual date
+        // const curDate = new Date();
+        // document.write(curDate.setFullYear(2022)); //1658430557540
+        // The setFullYear() method can optionally set month and day
+        // document.write("<br/>"+curDate.setFullYear(2022,10,5));      //1667589052729
+        // document.write("<br/>"+curDate.setMonth(10));                   //0-11 jan to dec
+        // document.write("<br/>"+ curDate.setDate(5));
+        // document.write("<br/>"+curDate.toLocaleString());            //11/5/2022, 12:43:59 AM
+
+// --> Time methods
+
+        // const curTime = new Date();
+
+        // how to get the individual Time
+
+        // document.write(curTime.getTime()+"<br/>");     //1658432232172
+        // // The getTime() method returns the number of milliseconds since january 1,1970
+        // document.write(curTime.getHours()+"<br/>");             //1
+        // // // The getHours() method returns the hours of a date as a number(0-23)
+        // document.write(curTime.getMinutes()+"<br/>");        //9
+        // document.write(curTime.getSeconds()+"<br/>");        //53
+        // document.write(curTime.getMilliseconds()+"<br/>");   //367
+
+
+        /*How to set the individual time*/
+        // to understand the usage visit time.html
+        let curTime = new Date();
+        // document.write(curTime.setTime()+"<br/>");
+        // document.write(curTime.setHours(5)+"<br/>");
+        // document.write(curTime.setMinutes(5)+"<br/>");
+        // document.write(curTime.setSeconds(5)+"<br/>");
+        // document.write(curTime.setMilliseconds(5)+"<br/>");
+
+
+
+// //practice time
+
+        new Date().toLocaleTimeString();  //11:48:48 AM
+        //
+        new Date().toLocalDateString();   //11/16/2015
+        // ---
+        new Date().toLocaleString();     //11/16/2015, 11:48:48 PM
+
+
+        
+</script>
+</body>
+</html>

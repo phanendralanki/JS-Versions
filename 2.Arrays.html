@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+     <script>
+
+        // Arrays in Javascript
+
+        // When we use var , we can store only one value at a time.
+        // problem: we can't store multiple values in single variable.
+        // var friend1 ="ramesh";
+        // var friend2 ='arjun';
+        // var friend3 = 'vikram';
+
+        // solution: we can store multiple values in an array
+        // var myFriends =['ramesh','arjun','vikram'];
+        // var myFriends =['ramesh',1,2.5];             //we can add different data types items in an Javascript array
+
+        // When we feel like storing multiple values in variable then
+        // instead of var , we will use an Array.
+        // In javascript, we have an Array class, and
+        // Arrays are the prototypes of this class.
+
+        // examples to create an array
+        // var myFriends = ['phani',20,male,'arjun',20,male ,'vishal',true, 52];
+
+
+
+        // What we will do in Arrays
+        // 1.Traversal of an array
+        // 2. Searching and filter in an array
+        // 3.How to sort and compare an Array
+        // 4.How to insert,Add,Replace and Delete Elements in Array(CRUD)
+        // 5.Map(),Reduce(),Filter()
+
+
+        // **1.Traversal of an array - traversal means display
+        // navigate through an array
+
+        // if we want to get the single data at a time and also
+        // if we want to change the data
+        // var myFriends = ['phani','ramesh','arjun','vishal'];
+        // Displaying an element
+        // document.write(myFriends[0]+"<br/>");
+        // document.write(myFriends[1]+"<br/>");
+        // document.write(myFriends[2]+"<br/>");
+        // document.write(myFriends[3]+"<br/>");
+        // document.write(myFriends[4]);                 //undefined
+
+        // if we want to check the length of elements of an array
+        // document.write("<br/>"+myFriends.length);       //method= length() if property then length
+
+        //To display a particular element from the array
+        // document.write("<br/>"+myFriends[myFriends.length-1]);     //to get the last element as an output in array
+
+
+        // We use for loop to navigate
+        // var myFriends = ['phani','ramesh','arjun','vishal'];
+
+        // for(i=0; i<myFriends.length; i++) {
+            // document.write(myFriends[i]+"<br/>");
+        // }
+
+
+        // These two are not discussed in javascript basics
+        /* After ES6 we have for..in and for..of loop too  */
+
+        // for..in loop
+        // for..in loop gives the index of our array
+        // var myFriends = ['phani','ramesh','arjun','vishal'];
+
+        // for(let elements in myFriends){
+        //     document.write(elements+"<br/>");
+        // }
+
+
+        // for..of loop
+            // for..of loop gives the values in the array
+        // var myFriends = ['phani','ramesh','arjun','vishal'];
+        // for(let elements of myFriends){
+        //     document.write(elements+"<br/>");
+        // }
+
+        // Array.prototype.forEach()
+        //calls a function for each element in the array.
+
+        // forEach() in normal traditional function
+        // var myFriends = ['phani','ramesh','arjun','vishal'];
+        // myFriends.forEach(function(element,index,array)
+        // {
+        //     document.write(element + " index : " + index +" "+ array +"<br/>");
+        //     // break;    //we cant use break in forEach() loop
+        // });
+
+        // forEach() in Fat arrow function
+        // var myFriends = ['phani','ramesh','arjun','vishal'];
+        // myFriends.forEach((Element,index,array)=>{
+        //     document.write(element + " index : " + index + " " + array +"<br/>");
+        // });
+
+
+        // ***** 2. Searching and Filter in an array    *****
+
+        // Array.prototype.indexOf() ->Forward search karega
+        // Returns the first(least) index of an element within the array equal
+        // to be an element, or -1 if none is found. It search the element from the 0th index number
+
+        // var myFriends = ['phanendra','lanki','satish','venky','nikhil','lanki','phanendra'];
+        // document.write(myFriends.indexOf("lanki",2));        
+        // document.write(myFriends.indexOf("phanendra"));        //at 0 index 
+        // document.write(myFriends.indexOf("phanendra",1));    (  // 6 index because indexOf starts at the index that we have specified
+        // document.write(myFriends.indexOf("Lanki"));     //-1 because we have given the wrong string.
+
+
+        // *****ii) Array.prototype.lastIndexOf() => backward search karega
+        // Returns the last (greatest) index of an element within the array equal
+        //to an element , or -1 if none is found. It search the element last to first
+
+        // var myFriends = ['phanendra','lanki','satish','venky','nikhil','lanki',"phanendra"];
+        // document.write(myFriends.lastIndexOf("phanendra"));   //6 because the lastIndexOf starts from the end
+        // document.write(myFriends.lastIndexOf("lanki"));      //5 because the lastIndexOf starts from end
+        // document.write(myFriends.lastIndexOf("lanki",4));       //1 because the lastIndexOf goes on 4->3->2->1
+
+
+
+        // ***iii) Array.prototype.includes()
+        // determines whether the array contains a value.
+        // returning true or false as appropriate.
+
+        // var myFriends = ['phanendra','lanki','satish','venky','nikhil','lanki',"phanendra"];
+
+        // document.write(myFriends.includes("phanendra"));     //true -> used in item validation
+        // document.write(myFriends.includes("Phanendra"));     //false
+        // document.write(myFriends.includes("satish",3));        //false- because it searches in forward way
+
+
+        /* ****filtration methods starts from here */ 
+
+        /* Array.prototye.find() */ 
+
+        // arr.find(callback(element[, index[ , array]])[, thisArg])
+        // returns the found element in the array, if some element in the array satisfies the testing function,
+        // or undefined if not found.
+        // only problem is that it returns only one element
+
+        // const prices = [200,300,350,400,450,500,600];
+        // // price < 400
+        //     const findElem = prices.find((currVal) =>{
+        //         return currVal < 400;                     //only 200 will be printed because find() will only return one value.
+        //     });
+
+        //     document.write(findElem);         //function call
+
+            /* one line of code for the above program */ 
+
+            // we can tackle any problem in a simple way by using fat arrow function
+            // price>300
+
+            // const prices = [200,300,350,400,450,500,600];
+            // const findElem = prices.find((currVal) => currVal >300); //fat arrow function
+            // const findElem = prices.find((currVal) => currVal >1400); //undefined because the condition is not satisfied
+            // document.write(findElem);                          // only 350 because it only returns one value.
+
+
+
+            /*Array .protype.findIndex() */
+
+            // Returns the found index in the array, if an element in the
+            // array satisfies the testing function, or -1 if not found.
+
+            // program
+            // let prices = [200,300,350,400,450,500,600];
+            // const findElem = prices.findIndex((currVal) => currVal <400);
+            // const findElem = prices.findIndex((currVal) => currVal >1600);      //gives -1 because the condition is not satisfying
+            // document.write(findElem);                  // 0 because it gives the index
+
+            // single line of code
+            // let prices = [200,300,350,400,450,500,600];
+            // document.write(prices.findIndex((currVal)=> currVal<400));  //at 0 index
+
+
+
+
+            /*Array.prototype.filter() */
+            //returns a new array containing all elements of the calling
+            // array for which the provided filtering function returns true.
+
+            // const prices = [200,300,350,400,450,500,600];
+
+            // price<400
+            // const newPriceTag = prices.filter((elem, index) => {
+            //     // return elem<400;                //returns all values that are satisfying the condition
+            //     return elem >1400;                 //returns an empty array because the condition is not satisfying.
+            // })
+            // document.write(newPriceTag);   
+            
+            
+            /* 3.how to sort and compare an array */
+
+            // ---> How to sort an array
+            // Array.prototype.sort()
+
+            // The sort() method sorts the elements of an array in place and returns the sorted array.
+            // The default sort order is ascending(small to big) , built upon converting the elements into strings,
+            // then compare their sequences of UTF-16 code units values.
+
+            // const months = ['March','Jan','Feb','Dec','Nov','April'];
+            //     //output: ['April','Dec','Feb','Jan','March','Nov']
+            // document.write(months.sort());     //sort() is a method.
+
+            // ** Same sort method if we use in numbers
+
+            // const array1 = [1,30,4,21,100000,99];
+            // document.write(array1.sort());
+            // output = ['1','100000','21','30','4','99']      
+
+            // However, if numbers are sorted as strings,
+            // "25" is bigger than "100",because "2" is bigger than "1".
+
+            // ****Because of this , the sort() method will produce an incorrect result when sorting numbers.
+
+
+            /*4. How to insert,Add,Replace and Delete Elements in Array(CRUD) */
+            // CRUD = create,update and delete
+                
+            /* Array.prototype.push() */
+            // The push() method adds one or more elements to the end of an array and returns the new length of the array.
+
+            // const animals = ['pigs','goats','sheep'];
+
+            // animals.push('chicken');         //push() is a method
+            // document.write(animals);          
+            // output = ['pigs','goats','sheep','chicken']
+
+            // To get the index i.e returns the new length of the array.
+            // const animals = ['pigs','goats','sheep'];
+            // const count = animals.push('chicken');         //push() is a method
+            // document.write(animals); 
+            //  // output = ['pigs','goats','sheep','chicken']
+            // document.write(count);         //output = 4 i.e new length of the array
+
+            // To add one or more elements into the array
+            // const animals = ['pigs','goats','sheep'];
+            // animals.push('chicken','cat','cow');
+            // document.write(animals);
+            // output = ['pigs','goats','sheep','chicken','cat','cow']
+
+
+            /* Array.prototype.unshift() */
+
+            // The unshift() method adds one or more elements to the
+            // beginning of an array and returns the new length of the array
+            // ***The difference between push() and unshift() is unshift adds data at the beginnig/start
+
+            // const animals = ['pigs','goats','sheep'];
+            // const  count    = animals.unshift('chicken');     // animals.unshift('chicken','cow','cat');
+            // document.write(animals);             //output: ['chicken','pigs','goats','sheep']
+            // To count the size of the array.
+            // document.write("<br/>"+count);             //4
+
+            // 2nd example
+
+            // const myNumbers = [1,2,3,5];
+            
+            // // document.write(myNumbers.unshift(4,6));    // 6 new array lenght
+            // myNumbers.unshift(4,6);        // adds numbers at the beginning
+            // document.write(myNumbers);
+            // // output : [4,6,1,2,3,5]
+
+
+            /*  Array.prototype.pop() */
+            // The pop() method removes the last element from an array and returns
+            // that element. This method changes the length of the array.
+
+                // const plants = ['broccoli','cauliflower','kale','tomato','cabbage'];
+                // document.write(plants);
+                // output: ['broccoli','cauliflower','kale','tomato','cabbage']
+            //    const count = plants.pop();
+                // document.write("<br/>"+plants);
+                // output: ['broccoli','cauliflower','kale','tomato']
+                // document.write("<br/>"+count);
+                // output: ['cabbage']
+
+
+                /*Array.prototype.shift() */  //-> opposite of unshift
+                // The shift() method removes the first element from an array and returns
+                // that removed element. This method changes the length of the array.
+
+                // const plants = ['broccoli','cauliflower','kale','tomato','cabbage'];
+                // document.write(plants+"<br/>");
+                // output: broccoli,cauliflower,kale,tomato,cabbage
+                // document.write(plants.shift()+"<br/>");
+                // output: broccoli
+                // document.write(plants);
+                // output: cauliflower,kale,tomato,cabbage
+
+
+                // Challenge time*
+                
+                /* *******Array.prototype.splice() ******  */
+                // Adds and/or removes elements from an array.
+
+                // 1. Add Dec at the end of an array?
+                // 2. What is the return value of splice method?
+                // 3. update march to March (update) ?
+                // 4. Delete June from an array ?
+
+                // const months = ['Jan','march','April','June','July'];
+
+                 // 1. Add Dec at the end of an array?
+
+                //  const newMonth = months.splice(5,0,'Dec'); //5=index number to add , 0 is the elements to deleted ,'Dec' is the String
+                // const newMonth = months.splice(months.length,0,'Dec');
+                //  document.write(months);
+                //  output: ['Jan','march','April','June','July','Dec']
+                // document.write(months.length);
+
+
+                // 2. What is the return value of splice method?
+                // document.write(newMonth);
+                // output : [] empty array because we are not deleting anything 0 in the above ques
+
+
+                // 3. update march to March (update) ?
+                // sol:
+                // const months = ['Jan','march','April','June','July'];
+
+                // const updateMonth = months.splice(1,1,'March');
+
+                // document.write(months);
+                // output: ['Jan','March','April','June','July']
+        // NOTE: this method is ok but when we have to update a element at index that we don't know then how it would be?
+                
+
+                // ****Another method to update*****
+                // to get the index of the element we use indexOf
+
+                // const months = ['Jan','march','April','June','July'];
+                // // To find the index of an element
+                // const indexOfMonth = months.indexOf('march');   //if we don't get the index then we use if else  
+                // if( indexOfMonth != -1){        //-1 means the data is present    
+                //     const updateMonth = months.splice(indexOfMonth,1,'March');
+                //     document.write(months);
+                //     // output: [Jan,March,April,June,July]
+                // }else{
+                //     document.write("no such data found");
+                // }
+                // const updateMonth = months.splice(1,1,'March');
+                // document.write(months);
+
+
+                // 4. Delete June from an array ?
+                // const months = ['Jan','march','April','June','July'];
+
+                // const indexOfMonth = months.indexOf('June');
+                // const indexOfMonth = months.indexOf('june');     // no such data due to june != June
+                // if(indexOfMonth != -1){
+                //     const updateMonth = months.splice(indexOfMonth,1);    //1 if we want to delete only june
+                //     document.write(months);
+                //     // output: [Jan,march,April,July]
+                // }else{
+                //     document.write('No such data found');
+                // }
+                // document.write(months);
+
+                // **how to delete april and after months
+
+                // const months = ['Jan','march','April','June','July'];
+                // const indexOfMonth = months.indexOf('April');
+                // if(indexOfMonth != -1){
+                // //    // const updateMonth = months.splice(indexOfMonth,Infinity);    //infinity if we want to delete april along with the next months 
+                //     // output: ['Jan','march']
+                //     const updateMonth = months.splice(indexOfMonth,2); 
+                //     // output: Jan,march,July 
+                //     document.write(months);
+                //     document.write("<br/>"+updateMonth);       //output: ['April','June']
+                // }else{
+                //     document.write('No such data found');
+                // }
+
+
+
+                /* Challenge time     */
+
+                // 1.Find the square root of each element in an array ?
+                // let arr = [25,36,49,64,81];
+                // 2. Multiply each element by 2 and return only those elements which are greater than 10?
+                // let arr = [2,3,4,6,8];
+                /* To Solve these type of questions we need to understand Map(),Reduce(),Filter() */
+
+                /* *****5.Map(),Reduce(),Filter()****** */
+                    // These three methods are very useful in nodejs,react
+
+                    // i)Array.prototype.map()
+                  //  // syntax:
+                    // let newArray = arr.map(callback(currentValue[, index[, array]]){
+                    //     return element for newArray, after executing something
+                    // }[, thisArg]);
+
+                    //Returns a new array containing the results of calling a 
+                    // function on every element in this array.
+                    
+                    const array1 = [1,4,9,16,25];
+
+                    // num > 9
+
+                    // let newArr = array1.map((curElem,index,arr) => {
+                    //     return curElem>9;
+                    // } )
+                    // document.write(array1);            // output:[1,4,9,16,25];
+                    // document.write("<br/>"+newArr);    // output:[false,false,false,true,true]
+                    
+                    let newArr  = array1.map((curElem,index,arr)=> {
+                        return `Index no = ${index} and the value is ${curElem} belong to ${arr} `
+                    })
+                    document.write(newArr);
+                    // output:
+                    // Index no = 0 and the value is 1 belong to 1,4,9,16,25 ,Index no = 1 and the value is 4 belong to 1,4,9,16,25 ,
+                    // Index no = 2 and the value is 9 belong to 1,4,9,16,25 ,Index no = 3 and the value is 16 belong to 1,4,9,16,25 ,
+                    // Index no = 4 and the value is 25 belong to 1,4,9,16,25
+     </script>
+</body>
+</html>

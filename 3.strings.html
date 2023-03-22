@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings in Javascript</title>
+</head>
+<body>
+    <script>
+
+
+// what we are going to learn in strings
+
+// Escape character
+// Finding a string in a string
+// searching for a string in a string
+// Extracting string parts
+// Replacing string content
+// Extracting String characters
+// other useful methods
+
+
+
+
+
+        /* Strings in Javascript */
+        // 1.A Javascript string is zero or more characters written inside quotes.
+        // 2.Javascript strings are used for storing and manipulating text.
+        // 3.You can use single or double quotes.
+        // 4.Strings can be created as primitives,from String literals, or as objects, using the String() constructor
+
+        // let myName = "phanendra lanki";
+        // let myChannelName = 'phanendra lanki';
+
+        // let ytName = new String("lanki phanendra");        //lanki phanendra is a constructor
+        // output : [string: 'lanki phanendra'] //we are getting a string so we do not use this method its just for the purpose of interview
+
+        // document.write(myName+"<br/>");
+        // document.write((ytName));        //we can create a string with constructor but it is not important or required
+
+
+
+
+// ----> new topic
+
+        /* How to find length of a string */
+        //String.prototype.length = Reflects the length of the string. 
+
+        // let myName = "phanendra lanki";        //15 = space is also calculated
+        // document.write(myName.length);
+        
+
+
+
+        // --> Topic : Escape sequence
+
+        /*Escape character */
+
+        // let anySentence = "We are the so-called "vikings" from the north.";
+        // document.write(anySentence);
+       // // output: SyntaxError: Unexpected identifier
+        
+        // solution- backslash character
+
+        // let anySentence = "We are the so-called \"vikings\" from the north.";
+        // document.write(anySentence);
+
+// Note:  If you dont want to mess ,simply use the alternative quotes('',"")
+        // let anySentence = 'We are the so-called "vikings" from the north.';
+        // document.write(anySentence);
+
+
+
+
+//--> Topic : Finding a String in a String
+
+        /*Finding a string in a string */
+
+        //string.prototype.indexOf(searchvalue [, fromIndex])
+        // he indexOf() method returns the index of (the position of) the first occurence of a specified text in a string
+
+        // const myBioDate = 'I am the phanendra lanki';
+        // document.write(myBioDate.indexOf("phanendra"));     //9 
+        // document.write(myBioDate.indexOf("Phanendra"));  //-1 if not found because this method is case sensitive
+        // document.write("<br/>"+myBioDate.indexOf("am"));     //2  (I = 0 index)
+        // document.write("<br/>"+myBioDate.indexOf('I'));      //0
+        // document.write("<br/>"+myBioDate.indexOf('a',3));     //Start searching a from the index 3, the next a is at index 11
+
+
+
+        //  // String.prototype.lastIndexOf(searchValue [, fromIndex])
+        // // Returns the index within the calling String object of the last occurence of searchValue, or -1 if not found
+
+        // const myBioDate = 'I am the phanendra lanki';
+        // document.write(myBioDate.length+"<br/>");      // 24 is the length of our string
+        // document.write(myBioDate.lastIndexOf("a",10))   //searching starts from the end  = 2(a) -> backward searching
+
+
+
+
+//--> Topic : Searching for a string in a string
+
+         /* Searching for a String in a String */
+        //String.prototype.search(regexp)
+        //The search() method searches a string for a specified value and 
+        // returns the position of the match. 
+
+        // const myBioDate = 'I am the phanendra lanki';
+
+        // let sData = myBioDate.search("phanendra");
+        // document.write(myBioDate);
+        // document.write("<br/>"+sData);           //9 (-1 if not present)
+
+        // The search() method cannot take a second start position argument.
+
+
+
+//--> Topic : Extracting String parts
+
+        /*Extracting String parts */
+
+        // There are 3 methods for extracting a part of a string:
+
+        // 1.slice(start, end)
+        // 2.substring(start, end)
+        // 3.substr(start,length)
+
+        // 1.The Slice() method
+        // slice() extracts a part of a string and returns the extracted part in a new string.
+
+        // The method takes 2 parameters : the start position,
+        // and the end position (end not included).
+
+        // var str = "Apple , Bananaa, Kiwi";
+
+        // // let res = str.slice(0,4);     //Apple = 0,1,2,3,4 (0,4): 0 is the starting index of apple, 4 is not included
+        // let res = str.slice(7,-2);        //Bananna, ki
+        // document.write(res);          //Appl
+
+        // The slice() method selects the elements starting at the given start argument, and ends at ,
+        // but does not include the given end argument.
+
+        // Note: The original array will not be changed.
+        // Remember: Javascript counts positions from Zero. First position is 0 
+
+
+//--> Challenge time
+
+// Q: Display only 280 characters of a string like the one used in Twitter?
+// myTweets contains 300 characters
+
+        // let myTweets = "  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, iure possimus numquam culpa in voluptates quibusdam officiis vitae odio consectetur. Possimus est iste odit. Harum tempora necessitatibus itaque. Praesentium fugiat harum suscipit, ullam iure asperiores at aspernatur incidunt dolor officiis in laboriosam. Minus facere hic sit vel aliquam dignissimos sequi commodi itaque magnam, ipsa ipsum aperiam optio maxime provident architecto excepturi animi? Soluta culpa minima officiis beatae sint fuga fugit, explicabo quidem quod, deserunt minus iure. Dicta sint esse nam in rem eaque, eveniet maiores quasi non aliquid. Laborum nam reiciendis voluptatem doloremque ducimus nulla similique eius recusandae. Perferendis sapiente ratione quam, sit natus id, necessitatibus voluptatum tenetur facilis ad, laboriosam incidunt doloribus veniam. Laborum tenetur facilis repellendus ipsa illum temporibus sunt, quisquam est similique ipsum? Voluptate vel veritatis quam. Veritatis sequi eius aut reprehenderit, dolorem enim. Doloribus, quia accusamus. Saepe minus quos excepturi cupiditate assumenda hic sit eos veritatis repellat itaque alias molestiae ex aspernatur perspiciatis ullam quasi, iure quidem aliquam id libero tempore doloribus. Dolore sint libero reprehenderit distinctio, sed ea dolorem quae numquam consequuntur tenetur optio minima dignissimos architecto totam? Assumenda aperiam incidunt inventore magni exercitationem impedit molestiae asperiores. Harum accusamus maxime aspernatur cumque rerum. Nam molestiae dicta fugit eveniet veritatis? Laboriosam commodi debitis sint impedit perferendis cupiditate obcaecati quod possimus expedita! Tempore numquam esse animi vero quisquam sint perferendis delectus, magni facilis provident, reprehenderit quas nisi placeat debitis sequi eaque accusamus ipsam nihil assumenda ratione corporis officiis dolore distinctio. Autem quo, facere nobis earum porro molestias vero necessitatibus. Officiis optio corporis explicabo asperiores assumenda eos repudiandae nesciunt quis debitis totam accusantium repellendus, id, nostrum quia necessitatibus laudantium, ipsa rem unde vitae excepturi atque similique itaque! Dolorem eligendi repellat esse veritatis, animi aliquid unde porro mollitia assumenda ipsam cupiditate amet at aut error corporis a similique. Dolor."
+
+        // let myActualTweet = myTweets.slice(0,280)  //0-279 because 280 is not included i.e 280 characters
+
+        // document.write(myActualTweet);
+        // document.write("<br/>"+myActualTweet.length);
+
+
+
+        /*Extacting string*/
+        // ii.substring()
+        // The substring() Method is similas to slice()
+        // The difference is that substring() cannot accept negative indexes(7,-2) 
+
+        // var str = "Apple, Bananaa, Kiwi";
+        // let res = str.substring(0,4);
+        // document.write(res);             //Appl same as slice() method
+
+        // let anres = str.substring(7,-2);         //the slicing starts from 0 to 7 (-ve number is not taken)
+        // document.write(anres);              //Apple,
+
+        // note: if we give negative value then the characters are counted from the 0th position
+
+
+         /*Extacting string*/
+        //iii. substr()Method
+        // substr() is similar to slice().
+        // The difference is that the second parameter specifies the "length of the extracted part".
+
+        // var str = "Apple, Bananaa, Kiwi";
+        // let res = str.substr(0,4);   //Appl
+        // document.write(res);
+
+        // let res = str.substr(7,-2);
+        // document.write(res);       //The negative value does not writtens any value
+
+        // If we want to extract data from backside then we can -index(-4)
+        // let res = str.substr(-4);      //The substr is used to get the substring from a string by giving -4/values.
+        // let res = str.substr(-8);   //aa, Kiwi
+        // document.write(res)
+
+
+//--> Topic
+        /* Replacing String content() */
+        // String.prototype.replace(searchFor, replaceWith)
+
+        // The replace() method replaces a specified value with another value in a string.
+
+        // let myBioDate = `I am phanendra lanki a software developer lanki`;
+
+        // let replaceData = myBioDate.replace('lanki','Lanki');
+
+        // document.write(myBioDate);               //original data will not change
+        // document.write("<br/>"+replaceData);
+
+        // Points to remember
+        // 1: the replace() method does not change the string
+        // it is called on. It returns a new string.
+        // 2.By default, the replace() method replaces only the first match
+        // 3.By default, the replace() method is case sensitive.
+        // writing LANKI (with upper-case) will not work.
+
+
+// --> Topic
+        /* Extracting String Characters */
+
+        // There are 3 methods for extracting String characters:
+
+        // 1.charAt(position)
+        // 2.charCodeAt(position)
+        // 3.Property access []
+
+
+
+        /*1. The charAt() Method */
+        // The charAt() method returns the character at a specified index (position) in a string
+
+        // let str = "HELLO WORLD";
+
+        // document.write(str.charAt(0));      //H
+        // document.write("<br/>"+str.length);    //To find length = 11
+
+
+//Challenge time
+
+        // Q: Return the Unicode of the last character in a string
+        // To solve this we need to understand the concept of charCodeAt
+
+
+        /* 2.The charCodeAt() Method */
+        // The charCodeAt() method returns the unicode of the character at a specified index in a string:
+
+        // The method returns a UTF-16 code
+        // (an integer between 0 and 65535).
+
+        // The Unicode Standard provides a unique number for every character, no matter the platform,device,
+        // application, or language. UTF-8 is a popular unicide encoding which has 88-bit code units.
+
+        // var str = "HELLO WORLD";
+        // document.write(str.charCodeAt(0));    //72 i.e unicode of H is 76
+
+//Challenge time
+
+        // Q: Return the Unicode of the last character in a string
+        // To solve this we need to understand the concept of charCodeAt
+        
+        // let str = "HELLO WORLD";
+        // document.write(str.length); //11
+        
+        // let lastChar = str.length-1;
+        // document.write(lastChar);      //11
+        // document.write(str.charCodeAt(lastChar));  //68
+
+        // Another method to solve challenge
+        // let str = "HELLO WORLD";
+        // document.write(str.charCodeAt(str.length-1));  //68
+
+
+        // 3.Property Access
+        // ECMAScript 5 (2009) allows property access [ ] on strings
+
+        // var str = "HELLO WORLD";
+        // document.write(str[0]);      //H
+
+
+//--> other useful methods
+
+        // let myName ='phanendra lAnki';
+        // document.write(myName.toUpperCase()+"<br/>");
+        // document.write(myName.toLowerCase());
+
+
+        // The concat() method
+        // concat() joins two or more strings
+
+        // let fName = "phanendra";
+        // let lName = "lanki";
+        // document.write(fname + lname);
+        // document.write(`${fName} ${lName}`);     //echmascript 2015 
+        // document.write(fName.concat(lName)+"<br/>");
+        // document.write(fName.concat(" ",lName));
+
+
+        // String.trim()
+        // The trim() method removes whitespace from both sides of a string
+
+        // var str = "          Hello World!                 ";
+        // document.write(str.trim());
+
+
+        /*Converting a String into an Array*/
+        // A string can be converted to an array with the split() method
+
+        // var txt = "a,b,c,d,e"; //string
+        // document.write(txt.split(","));       //split on commas
+        // document.write(txt.split(" "));         // split on spaces
+        // document.write(txt.split("|"));       //split on pipe
+    </script>
+</body>
+</html>

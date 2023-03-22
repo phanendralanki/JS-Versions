@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>search</title>
+        <style>
+            body {
+                font-family: 'Inconsolata', sans-serif;
+                background: #2a364f;
+                display: grid;
+                place-items: center;
+            }
+
+            button {
+                display: inline-block;
+                background: #F9B627;
+
+            }
+
+            p ,form{
+                text-align: center;
+                color: whitesmoke;
+            }
+
+            h1 {
+                color: aquamarine;
+            }
+
+            button {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="para">Plz like the video</p>
+        <p class="para">Plz share this video</p>
+        <p>Don't forget to subscribe my channel</p>
+        <h1 id="heading">changed the content of the h1</h1>
+
+        <form action="">
+            <label for="">male</label>
+            <input type="radio" name="gender" id="">
+            <label for="">female</label>
+            <input type="radio" name="gender" id="">
+            <label for="">malefemale</label>
+            <input type="radio" name="gender" id="">
+        </form>
+
+        <button onclick="changeContent()">Click Me</button>
+
+        <script>
+            const changeContent = () => {
+                // 1.we can directly write
+                // document.getElementById('heading').innerHTML = "Welcome phanendra";
+
+                // by taking the Reference, heading is the object here
+                // const headingchange =  document.getElementById('heading');
+                // headingchange.innerHTML = "welcome phanendra lanki";
+
+                // To access the elements through classes then-->
+            //    console.log( document.getElementsByClassName('para'));
+
+                // with tag name
+            //    console.log(document.getElementsByTagName('p'));
+
+            // console.log(document.getElementsByName('gender'));          //to get by name gender in form
+
+
+
+                // Now the same we have is the query selectors
+                // i)querySelector returns the first matching value whereas
+                // ii)querySelectorAll() will return all the elements
+
+
+                // document.querySelector('#heading').innerHTML = "I changed again";
+                // Note: query selector only changes the one element i.e first even two classes with same name '.para'
+                // document.querySelector('.para').innerHTML = "I changed by query selector";
+
+
+                 // ii)querySelectorAll() will return all the elements
+                // console.log(document.querySelectorAll('.para'));
+                // console.log(document.querySelectorAll('#heading'));
+
+
+    //Interview question
+
+    //What is the difference between getElementById and querySelector?
+
+    // What is getElementById()?
+
+    // syntax: document.getElementById(id);
+
+    /* Returns a reference to the element by its ID.
+     if the element with the specified ID is not in the document.
+     it will returns null.  */
+
+    //  What is querySelector()?
+    // syntax: 
+    // element = document.querySelector(selectors);
+
+
+    /* Returns the first element with in the document that matches the specified group of selectors,
+        or null if no matches are found. */
+
+
+
+
+            }
+        </script>
+    </body>
+</html>
